@@ -13,7 +13,7 @@ describe("parseDollars", () => {
 
   it("rejects amounts that aren't cents", () => {
     expect(parseDollars("")).toBeNull();
-    expect(parseDollars("12.")).toBeNull();
+    expect(parseDollars("12.")).toBe(1200);
     expect(parseDollars("12.999")).toBeNull();
     expect(parseDollars("1.2.3")).toBeNull();
     expect(parseDollars("ten")).toBeNull();
@@ -26,6 +26,7 @@ describe("parsePercent", () => {
     expect(parsePercent("8.875")).toBe(88_750);
     expect(parsePercent("8.8750")).toBe(88_750);
     expect(parsePercent("20.5%")).toBe(205_000);
+    expect(parsePercent("18.")).toBe(180_000);
     expect(parsePercent("0.0001")).toBe(1);
     expect(parsePercent("100")).toBe(1_000_000);
   });

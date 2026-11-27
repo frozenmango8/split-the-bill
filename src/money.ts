@@ -1,8 +1,8 @@
 /** 1_000_000 = 100%. A percent keeps four decimal places: 8.875% is 88750. */
 export const RATE_SCALE = 1_000_000;
 
-const DOLLAR = /^(?:(\d{1,7})|(\d{0,7})\.(\d{1,2}))$/;
-const PERCENT = /^(\d{1,3})(?:\.(\d{1,4}))?$/;
+const DOLLAR = /^(?:(\d{1,7})\.?|(\d{0,7})\.(\d{1,2}))$/;
+const PERCENT = /^(\d{1,3})(?:\.(\d{0,4}))?$/;
 
 export function parseDollars(raw: string): number | null {
   const s = raw.trim().replace(/^\$/, "").trim();
