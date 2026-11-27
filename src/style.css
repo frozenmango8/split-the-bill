@@ -1,0 +1,34 @@
+:root {
+  color-scheme: light;
+  --bg: #f3f1ec;
+  --ink: #221f1b;
+  --muted: #6d675f;
+  --line: #ddd6cb;
+  --paper: #fffcf8;
+  --fill: #2c2a26;
+  --fill-ink: #f6f3ee;
+  --bad: #8a3b32;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.4 system-ui, sans-serif;
+}
+
+main {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+h1 {
+  font-size: 1.35rem;
+  font-weight: 650;
+  margin: 0 0 0.25rem;
+}
