@@ -85,6 +85,10 @@ window.addEventListener("hashchange", () => {
 render();
 writeHash();
 
+if (import.meta.env.PROD && "serviceWorker" in navigator) {
+  void navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`, { updateViaCache: "none" });
+}
+
 function addPerson(form: HTMLFormElement) {
   const input = form.elements.namedItem("name");
   if (!(input instanceof HTMLInputElement)) return;
